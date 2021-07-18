@@ -4,6 +4,10 @@
 ```
 npm install
 ```
+### Ensure mock api is running using json-server before compiling the application
+```
+json-server --watch mock-api.json
+```
 
 ### Compiles and hot-reloads for development
 ```
