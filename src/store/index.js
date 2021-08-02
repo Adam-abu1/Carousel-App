@@ -20,7 +20,7 @@ export default createStore({
         }
     },
     actions: {
-        fetchSlides({ commit }) {
+        fetchSlides({commit}) {
             SlidesContent.getContent()
                 .then(response => {
                     commit('SET_SLIDES', response.data.slides);
@@ -29,10 +29,12 @@ export default createStore({
                     console.error('There was a problem fetching the slide: ' + error.message)
                 });
         },
-        fetchSlide({ commit, getters }, id) {
-            return  getters.getSlideById(id);
+
+        fetchSlide({commit, getters}, id) {
+            commit('SET_CURRENT_SLIDE', getters.getSlideById(id));
         },
-        fetchFooters({ commit }) {
+
+        fetchFooters({commit}) {
             SlidesContent.getContent()
                 .then(response => {
                     commit('SET_FOOTERS', response.data.footer);
@@ -40,8 +42,19 @@ export default createStore({
                 .catch(error => {
                     console.error('There was a problem fetching the footers: ' + error.message);
                 });
+        },
+
+        getNextSlide({commit, getters, state}) {
+            let nextSlideId = state.currentSlide.id + 1;
+
+            if (getters.getSlideById(nextSlideId)) {
+                commit('SET_CURRENT_SLIDE', getters.getSlideById(nextSlideId));
+            } else {
+                commit('SET_CURRENT_SLIDE', getters.getSlideById(state.slides[0].id));
+            }
         }
     },
+
     getters: {
         getSlideById: state => id => {
             return state.slides.find(slide => slide.id === id);

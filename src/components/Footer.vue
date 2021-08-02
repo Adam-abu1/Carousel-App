@@ -1,9 +1,9 @@
 <template>
     <footer>
         <div class="slide-navigational-buttons">
-            <button class="back-button">BACK</button>
+            <button class="back-button" @click="getPrevSlide">BACK</button>
             <input type="checkbox" disabled>
-            <button class="next-button">NEXT</button>
+            <button class="next-button" @click="getNextSlide">NEXT</button>
         </div>
         <div class="footer-links">
             <a target="_blank" v-for="footer in footers" :href="footer.url">{{ footer.label }}</a>
@@ -12,13 +12,37 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex';
+    import {mapState} from 'vuex';
 
     export default {
         name: "Footer",
 
         computed: {
-            ...mapState(['footers'])
+            ...mapState(['footers', 'currentSlide']),
+
+            nextLabelExist() {
+                if (this.currentSlide && this.currentSlide.next && this.currentSlide.next.label) {
+                    return true;
+                }
+
+                else if (
+                    this.currentSlide && this.currentSlide.content && this.currentSlide.content.next
+                    && this.currentSlide.content.next.label
+                ) {
+                    return true;
+                }
+
+                return false;
+            }
+        },
+
+        methods: {
+            getNextSlide() {
+                this.$store.dispatch('getNextSlide');
+            },
+            getPrevSlide() {
+                this.$store.dispatch('getPrevSlide');
+            },
         },
 
         created() {

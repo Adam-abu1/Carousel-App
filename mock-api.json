@@ -22,7 +22,7 @@
                     "heading": "Welcome!",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
                     "image": {
-                        "url": "https://placeimg.com/500/430/nature",
+                        "url": "https://placeimg.com/500/430/animals",
                         "alt": "alternative text"
                     },
                     "next": {
@@ -40,7 +40,7 @@
                     "heading": "Welcome!",
                     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
                     "image": {
-                        "url": "https://placeimg.com/500/430/nature",
+                        "url": "https://placeimg.com/500/430/arch",
                         "alt": "alternative text"
                     },
                     "next": {
@@ -85,7 +85,7 @@
                 "group_name": "You",
                 "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
                 "image": {
-                    "url": "https://placeimg.com/500/430/nature",
+                    "url": "https://placeimg.com/500/430/people",
                     "alt": "alternative text"
                 },
                 "back": {
@@ -103,7 +103,7 @@
                 "heading": "Be Inspired",
                 "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
                 "image": {
-                    "url": "https://placeimg.com/500/430/nature",
+                    "url": "https://placeimg.com/500/430/tech",
                     "alt": "alternative text"
                 },
                 "back": {
